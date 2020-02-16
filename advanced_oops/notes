@@ -1,0 +1,42 @@
+everything in python is an object.
+
+objects have thier own methods and attributes.
+
+using oop, we can structure, extend our code, also reuse it.
+
+for that v break down the functionalities into different objects.
+
+for exmple while creating an application, developers work on different functionalities and later combine them to form full fledged application.
+
+class - blueprint/model of what v want to create.
+
+and using this v acn create instances 
+
+and this instances are called object.
+
+can create any number of objct using the blueprint
+
+oop allows to write code that is repeatable, memory efficient.
+
+
+inheritance
+-------------
+classes in python can be extended.
+creating new classes which get characteristics of the base class.
+
+involes a superclass and subclass.
+
+realtionship b/w superclass and sublclass defines a isa relationship
+eg: rectangle is a polygon.
+
+note: cant inherit the private members of supeclass into the subclass.
+to get the provate members, v needto use getter and setter method in superclass.
+
+
+multiple inheritance
+-------------------
+ability of a class to inherit rom multiple classes.
+
+
+
+
