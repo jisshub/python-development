@@ -26,3 +26,5 @@ def exceptFun(numbers):
 
 
 exceptFun([10, 30, 20, 50])
+
+
