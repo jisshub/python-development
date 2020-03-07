@@ -1,0 +1,9 @@
+yield vs return
+----------------
+return statement exists the function, while yield statement
+pauses the function and save the state of thAT fcuntion.
+
+onnce v use a yield statment in a funciton then it is a 
+generator function. and this generator function yields an iterator object. 
+
+ 
