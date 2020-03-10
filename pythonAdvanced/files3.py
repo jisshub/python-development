@@ -7,3 +7,6 @@ data = {"a": 10, "b": 44, "c": 66}
 cb = getIndex(data, "b")
 print(cb)
 
+
+
+
