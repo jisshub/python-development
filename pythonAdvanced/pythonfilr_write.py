@@ -9,3 +9,12 @@ with open("./contents.txt", "a") as fw:
 
     with open("./contents.txt", "r") as fw:
         print(fw.read(), end="")
+
+
+# creating a new file and writing to it
+with open("./extra_files/hello.txt", "w") as fe:
+    fe.write("writing to a new file")
+
+with open("./extra_files/hello.txt", "r") as fe:
+    cont = fe.read()
+    print(cont, end="")
