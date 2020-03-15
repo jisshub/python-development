@@ -12,3 +12,11 @@ def multiply(x, y):
 
 def division(x, y):
     return x / y
+
+
+def open_new_file():
+    open("./unitest_not")
+
+
+scores = range(30, 40)
+scores_2 = range(50, 60)

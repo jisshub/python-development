@@ -32,12 +32,12 @@ class TestMyCases(unittest.TestCase):
         self.assertIs(a, b)
 
     def test_case_6(self):
-        names = ["thor", "speiderman", "hulk", "wolverine"]
+        names = ["thor", "spiderman", "hulk", "wolverine"]
         # assertIn(a, iterable) #a in iterable
         self.assertIn("hulk", names)
 
     def test_case_7(self):
-        names = ["thor", "speiderman", "hulk", "wolverine"]
+        names = ["thor", "spiderman", "hulk", "wolverine"]
         # assertNotIn(a, iterable) where a not in the iterable
         self.assertNotIn("superman", names)
 

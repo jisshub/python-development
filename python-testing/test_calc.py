@@ -20,6 +20,15 @@ class TestCalc(unittest.TestCase):
     def test_division(self):
         self.assertEqual(calc.division(50, 5), 10)
 
+    def test_scores(self):
+        self.assertIn(35, calc.scores)
+
+    def test_scores_2(self):
+        self.assertNotIn(44, calc.scores_2)
+
+    def test_openfile(self):
+        self.assertRaises(FileNotFoundError, calc.open_new_file)
+
 
 # Run the test
 if __name__ == '__main__':
