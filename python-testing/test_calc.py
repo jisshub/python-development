@@ -1,21 +1,26 @@
 import unittest
 
+# import module calc.py
 import calc
 
 
-#
-
-# inherit from TestCase class
-class TestMyCalculations(unittest.TestCase):
+class TestCalc(unittest.TestCase):
     # define a test method
-    result = 10
-    license = True
+    def test_additon(self):
+        self.assertEqual(calc.addition(10, 5), 15)
+        self.assertNotEqual(calc.addition(13, 6), 15)
 
-    def test_add(self):
-        self.assertEqual(10, self.result, "should be 10")
-        self.assertNotEqual(33, self.result, "should be 10")
+    def test_subtract(self):
+        self.assertEqual(calc.subtract(30, 10), 20)
+        self.assertNotEqual(calc.subtract(30, 15), 20)
+
+    def test_multiply(self):
+        self.assertEqual(calc.multiply(20, 2), 40)
+
+    def test_division(self):
+        self.assertEqual(calc.division(50, 5), 10)
 
 
-# to run the test,
-if __name__ == "__main__":
+# Run the test
+if __name__ == '__main__':
     unittest.main()
