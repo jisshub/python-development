@@ -7,9 +7,11 @@ class Cars:
         self.__speed = speed
         self.__color = color
 
+    # setter
     def set_speed(self, value):
         self.__speed = value
 
+    # getter
     def get_speed(self):
         return self.__speed
 

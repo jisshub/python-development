@@ -18,5 +18,9 @@ def open_new_file():
     open("./unitest_not")
 
 
+def get_new_value():
+    int(input("Value: "))
+
+
 scores = range(30, 40)
 scores_2 = range(50, 60)

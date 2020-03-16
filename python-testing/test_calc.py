@@ -27,7 +27,12 @@ class TestCalc(unittest.TestCase):
         self.assertNotIn(44, calc.scores_2)
 
     def test_openfile(self):
+        # test passes if filenotfound occurs
         self.assertRaises(FileNotFoundError, calc.open_new_file)
+
+    def test_getval(self):
+        # test passes if value error is raised
+        self.assertRaises(ValueError, calc.get_new_value)
 
 
 # Run the test
