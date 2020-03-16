@@ -38,5 +38,12 @@ multiple inheritance
 ability of a class to inherit rom multiple classes.
 
 
+justmy works:
+
+[
+{"name": "jiss", "age":44},
+{"name": "jiss", "age":44},
+{"name": "jiss", "age":44},
+]
 
 
