@@ -68,8 +68,9 @@ class FootballTeam(SportsClub):
         self.__add_players()
         for each_player in self.players_list:
             for pl_key, pl_value in each_player.items():
-                print(pl_key, pl_value)
-            break
+                print("\n")
+                print(f"{pl_key}: {pl_value}")
+                # break
 
 
 club1 = FootballTeam(1917, "Madrid")
