@@ -47,3 +47,9 @@ justmy works:
 ]
 
 
+
+({
+"tactics": "long ball games",
+"formation": "4-4-4",
+"requirements":["a", "b", "c"]
+})

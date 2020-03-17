@@ -46,13 +46,18 @@ class FootballTeam(SportsClub):
 
     # private method -2
     def __add_players(self):
+        global player_name
+        global shirt_number
+        global player_role
         while self.team_size > 0:
-            player_name = input("Name: ")
-            shirt_number = int(input("Shirt Number: "))
-            player_role = input("Player Role: ")
-            # append all to a list in form dict
-            self.players_list.append(dict(playerName=player_name, shirtNumber=shirt_number,
-                                          playerRole=player_role))
+            try:
+                player_name = input("Name: ")
+                shirt_number = int(input("Shirt Number: "))
+                player_role = input("Player Role: ")
+            # append all to a list in form of dict
+            except ValueError:
+                self.players_list.append(dict(playerName=player_name, shirtNumber=shirt_number,
+                                              playerRole=player_role))
             self.team_size -= 1
 
     # access the private method from public methods
@@ -71,9 +76,65 @@ class FootballTeam(SportsClub):
                 # break
 
 
-club1 = FootballTeam(1917, "Madrid")
+class MoreAboutFootball(FootballTeam):
+    def __init__(self, founded, city):
+        super().__init__(founded, city)
+        self.tactics = None
+        self.formations = None
+        self.requirements = None
+        self.tactics_info = []
+
+    def __schedule__tactics(self):
+        try:
+            self.tactics = input("Style of Play: ")
+            if self.tactics == "long ball game":
+                self.formations = "4-1-4-1"
+                self.requirements = ["defensive midfield shield defence",
+                                     "wingers to attack",
+                                     "striker must be strong"]
+                print(self.get_the_tactics())
+
+            elif self.tactics == "counter attack" or "high press":
+                self.formations = "4-2-3-1"
+                self.requirements = ["defence remain solid or compact",
+                                     "spring attacking moves",
+                                     "wingers exploit spaces"]
+                print(self.get_the_tactics())
+
+            elif self.tactics == "park the bus":
+                self.formations = "4-3-2-1"
+                self.requirements = ["defence tuck into central areas",
+                                     "sole attacker is isolated"]
+                print(self.get_the_tactics())
+
+            elif self.tactics == "tikitaka":
+                self.formations = "4-1-2-3"
+                self.requirements = ["sweeper gk",
+                                     "good on the ball",
+                                     "passing and movement"]
+                print(self.get_the_tactics())
+            else:
+                print("Wrong Input")
+
+        except Exception as err:
+            print(err.args)
+
+    def get_the_tactics(self):
+        # access the private method
+
+        self.tactics_info.append(dict(tactics=self.tactics, formation=self.formations,
+                                      requirements=self.requirements))
+        return self.tactics_info
+
+    def call_the_tactics(self):
+        # call the private method here,
+        self.__schedule__tactics()
+
+
+club1 = MoreAboutFootball(1917, "Madrid")
 club1.set_president_revenue()
 print(club1.get_president_revenue())
 club1.diff_sports_type()
 print(club1.get_team_info())
 club1.get_players()
+club1.call_the_tactics()
