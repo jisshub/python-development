@@ -22,13 +22,11 @@ class SportsClub:
                f"{self.__president} and has revenue of {self.__totalRevenue}"
 
     def diff_sports_type(self):
-        sports_list = list()
-        while len(sports_list) < 3:
-            games = input("sports: ")
-            sports_list.append(games)
-        print(f"{SportsClub.clubName} has {len(sports_list)} teams")
-        for counter, games in enumerate(sports_list):
-            print(f"{counter}: {games}")
+        games = input("sports: ")
+        games = games.split(" ")
+        print(f"{SportsClub.clubName} has {len(games)} teams")
+        for counter, game in enumerate(games):
+            print(f"{counter}: {game}")
 
 
 class FootballTeam(SportsClub):
