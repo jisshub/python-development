@@ -1,6 +1,7 @@
 # generate random data - store - csv file
 import random
 from csv import writer
+import json
 
 names_1 = ["ajith", "john", "adharsh", 'justin', 'george',
            "abin", "corey", "jom", 'antony']
@@ -12,6 +13,7 @@ age = range(30, 50)
 place_list = ["angamaly", "kochi", "thrissur", 'kakkanad',
               "thevara", "kalady", 'seattle']
 
+# storing in a csv file
 with open("./extrafiles/person.csv", "w") as csv_file:
     write_to_csv = writer(csv_file)
     write_to_csv.writerow(["first Name".upper(), "last name".upper(),
@@ -30,3 +32,7 @@ with open("./extrafiles/person.csv", "w") as csv_file:
 
 
     need_all_infos()
+
+
+# storing in json file
+
