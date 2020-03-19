@@ -9,3 +9,5 @@ myPracticeProblems/extrafiles
 /file.txt
 /advanced_oops/workfile
 /tuple.py
+__pycache__/
+
