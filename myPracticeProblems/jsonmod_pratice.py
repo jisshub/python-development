@@ -22,9 +22,10 @@ personData = {
     ]
 }
 
+# write
 with open("./extrafiles/personDataSample.json", "w") as jw:
     json.dump(personData, jw)
-
+# read
 with open('./extrafiles/personDataSample.json', "r") as jr:
     json_cont = json.load(jr)
     get_each_ONE = personData.get("eachData")
