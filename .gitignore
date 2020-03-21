@@ -11,3 +11,5 @@ myPracticeProblems/extrafiles
 /tuple.py
 __pycache__/
 
+/advanced_oops/employee_data.csv
+/advanced_oops/employee_data.json
