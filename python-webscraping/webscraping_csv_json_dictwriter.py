@@ -60,7 +60,7 @@ for get_each_main in getMain:
             "categories": category_list,
             "tag": tag_list,
         })
-        # increment i
+        # increment j and decrement i
         j -= 1
         i += 1
     print(all_info)
