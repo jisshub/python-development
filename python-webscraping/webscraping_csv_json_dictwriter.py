@@ -33,17 +33,23 @@ for get_each_main in getMain:
         description = content_text.split(".")[0]
         # get youtube link
         get_youtube_link = get_article[i].find("iframe")["src"].split("?")[0]
+
         # get files under
         category_list = []
+        # get list of data with attribute rel
         get_category = get_article[i].find_all("a", attrs={"rel": "category tag"})
         for each_category in get_category:
             category_list.append(each_category.text)
-        # get tags
+        # join each item in the list with a comma
+        category_list = ", ".join(category_list)
+
         tag_list = []
+        # get list of data with attribute rel
         get_tags = get_article[i].find_all("a", attrs={"rel": "tag"})
         for each_tag in get_tags:
             tag_list.append(each_tag.text)
-
+        # join each item in the list with a comma
+        tag_list = ", ".join(tag_list)
         # append all result to a list
         all_info.append({
             "title": get_title_text,
