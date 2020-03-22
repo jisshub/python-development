@@ -1,0 +1,56 @@
+install scrapy
+-----------
+pip install scrapy
+
+Creating a project
+---------------------
+scrapy startproject tutorial
+
+tutorial/
+    scrapy.cfg            # deploy configuration file
+
+    tutorial/
+
+        __init__.py      # project's Python module, you'll import your code from here
+
+        items.py          # project items definition file
+
+        middlewares.py    # project middlewares file
+
+        pipelines.py      # project pipelines file
+
+        settings.py       # project settings file
+
+        spiders/          # a directory where you'll later put your spiders
+            __init__.py
+
+Our first Spider
+------------------
+Spiders are classes that you define and that Scrapy uses to scrape information from a website
+
+A Sample scrapt progaram
+0-------------------------
+
+
+class Sample(scrapy.Spider):
+    name = "posts"
+        # urls to scrap from
+    start_urls = ["https://blog.scrapinghub.com/page/1/",
+                  "https://blog.scrapinghub.com/page/2/", ]
+
+     # use parse() to process the response we get
+    # and return the scraped data
+    def parse(self, response):
+        # get page of each url in the start_urls list,
+        page_no = response.url.split("/")[-1]
+        # a filename for pages to scrap
+        filename = f"page-{page_no}.html"
+        # write to these files
+        with open(filename, mode="wb") as f:
+            # write the body of the page to files
+            f.write(response.body)
+
+runnig the project
+------------------
+scrapy crawl posts
+
