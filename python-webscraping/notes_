@@ -1,0 +1,7 @@
+print(data.strip("[]"))
+'sad', 'dsad'
+afterStrip = data.strip("[]")
+print(afterStrip)
+'sad', 'dsad'
+
+
