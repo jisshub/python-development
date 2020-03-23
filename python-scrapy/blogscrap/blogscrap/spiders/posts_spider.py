@@ -21,3 +21,4 @@ class PostsSpider(scrapy.Spider):
         with open(filename, mode="wb") as f:
             # write the body of the page to files
             f.write(response.body)
+

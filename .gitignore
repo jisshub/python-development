@@ -13,3 +13,4 @@ __pycache__/
 
 /advanced_oops/employee_data.csv
 /advanced_oops/employee_data.json
+/python-scrapy/blogscrap/blogscrap/spiders/posts.json
