@@ -2,7 +2,7 @@
 import scrapy
 
 
-# later define a class that inherits from SPider class
+# later define a class that inherits from Spider class
 class PostsSpider(scrapy.Spider):
     # define a name for spider
     name = "first_scrap"
@@ -10,14 +10,14 @@ class PostsSpider(scrapy.Spider):
     start_urls = ["https://blog.scrapinghub.com/page/1/",
                   "https://blog.scrapinghub.com/page/2/", ]
 
-    # use parse() to process the response we get
+    # use parse() to process the response object we get
     # and return the scraped data
     def parse(self, response):
         # get page of each url in the start_urls list,
         page_no = response.url.split("/")[-1]
-        # a filename for pages to scrap
+        # a filename for both pages
         filename = f"page-{page_no}.html"
-        # write to these files
+        # write scraped data to these files
         with open(filename, mode="wb") as f:
             # write the body of the page to files
             f.write(response.body)

@@ -52,5 +52,62 @@ class Sample(scrapy.Spider):
 
 runnig the project
 ------------------
-scrapy crawl posts
+scrapy crawl <spider_name>
 
+
+
+working dwith srcapy shell
+-------------------------
+scrapy shell <url_to_crawl>
+
+command commands
+----------
+1. using css selectors:
+
+>> response.css("title")
+    -- returns selector list that wraps around
+        html element 'title'
+
+
+
+selecting by class name
+-----------------------------
+response.css(".post-header").get()
+    -- first post-header class element
+response.css(".post-header").getall()
+    -- all post-header class element
+response.css(".post-header a").get()
+    -- first a tag in post header class
+response.css(".post-header a::text").get()
+    -- get first text of a tag.
+
+response.css(".post-header a::text").getall()
+    -- get all text of a tag.
+
+
+using regex
+----------
+response.css('p::text').re('scraping')
+    -- gets a list with value as scraping
+
+response.css('p::text').re('[a-z]+')
+    -- gets a list of lowercase words and letters.
+
+
+using xpath selector
+-------------------
+xpath:
+    It is a syntax or language for finding any element
+    on the web page using XML path expression
+
+response.xpath('//h3)
+-- gets h3 tag in a list
+
+response.xpath('//h3/text()').extract()
+   -- list of text values in h3 tags
+
+response.xpath('xpath in html').extract
+    -- list of corresponding tags
+
+response.xpath('//span[@class="author"]').extract()
+ - gets all span element with class as "author"
